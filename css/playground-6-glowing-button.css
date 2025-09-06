@@ -32,7 +32,7 @@
   position: relative;
 
   /* TODO #1: Add the pulsing glow animation */
-  /* animation: pulse-glow 2s ease-in-out infinite; */
+  animation: pulse-glow 1s ease-in-out infinite;
 
   /* Smooth transitions for hover effects */
   transition: all 0.3s ease;
@@ -44,9 +44,19 @@
   transform: scale(1.05);
 
   /* TODO #2: Add a stronger glow on hover */
-  /* box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 
-                   0 0 60px rgba(102, 126, 234, 0.4); */
+  box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), 
+                  0 0 60px rgba(102, 126, 234, 0.4);
 }
+
+  .glowing-button:active {
+      box-shadow: 0 0 40px rgba(255, 255, 0, 0.8), 0 0 80px rgba(255, 255, 0, 0.4);
+      transform: scale(0.98);
+  }
+    .glowing-button:focus {
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.8)
+      ;
+      transform: scale(0.98);
+  }
 
 /* STEP 3: The pulsing glow animation */
 @keyframes pulse-glow {
@@ -55,7 +65,7 @@
       0 0 5px rgba(102, 126, 234, 0.3),
       0 0 10px rgba(102, 126, 234, 0.2);
     /* TODO #3: Set filter brightness to normal (try 1) */
-    filter: brightness(/* YOUR VALUE HERE */);
+    filter: brightness(1);
   }
 
   50% {
@@ -63,10 +73,10 @@
     box-shadow:
       0 0 20px rgba(102, 126, 234, 0.8),
       0 0 40px rgba(102, 126, 234, 0.4),
-      0 0 /* YOUR SIZE HERE */ px rgba(102, 126, 234, 0.2);
+      0 0 /* YOUR SIZE HERE */60 px rgba(102, 126, 234, 0.2);
 
     /* TODO #5: Make it brighter with filter (try 1.2) */
-    filter: brightness(/* YOUR VALUE HERE */);
+    filter: brightness(1.2);
   }
 
   100% {
@@ -112,7 +122,7 @@
 /* STEP 4: Advanced glow variations */
 
 /* TODO #6: Uncomment for a rainbow glow effect! */
-/*
+
 @keyframes rainbow-glow {
     0% { box-shadow: 0 0 20px #ff0000; }
     16% { box-shadow: 0 0 20px #ff8000; }
@@ -122,10 +132,10 @@
     83% { box-shadow: 0 0 20px #8000ff; }
     100% { box-shadow: 0 0 20px #ff0000; }
 }
-*/
+
 
 /* TODO #7: Uncomment for a breathing/scaling effect! */
-/*
+
 @keyframes breathe {
     0%, 100% {
         transform: scale(1);
@@ -137,10 +147,10 @@
                     0 0 60px rgba(102, 126, 234, 0.3);
     }
 }
-*/
+
 
 /* TODO #8: Uncomment for a electric spark effect! */
-/*
+
 @keyframes electric {
     0%, 100% {
         box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
@@ -156,7 +166,7 @@
         filter: brightness(1);
     }
 }
-*/
+
 
 /* EXPERIMENT ZONE:
    ================

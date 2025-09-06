@@ -20,7 +20,7 @@
   height: 150px;
 
   /* TODO #1: Make the whole wheel spin */
-  /* animation: spin 3s linear infinite; */
+  animation: wobble-spin 0.5s linear infinite;
 }
 
 /* STEP 2: Style the center hub */
@@ -57,43 +57,50 @@
 .spoke-2 {
   background: linear-gradient(to right, #f39c12, #e67e22);
   /* TODO #2: Set rotation to 60 degrees */
-  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ deg);
+  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ 60deg);
 }
 
 .spoke-3 {
   background: linear-gradient(to right, #f1c40f, #f39c12);
   /* TODO #3: Set rotation to 120 degrees */
-  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ deg);
+  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ 120deg);
 }
 
 .spoke-4 {
   background: linear-gradient(to right, #2ecc71, #27ae60);
   /* TODO #4: Set rotation to 180 degrees */
-  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ deg);
+  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ 180deg);
 }
 
 .spoke-5 {
   background: linear-gradient(to right, #3498db, #2980b9);
   /* TODO #5: Set rotation to 240 degrees */
-  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ deg);
+  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ 240deg);
 }
 
 .spoke-6 {
   background: linear-gradient(to right, #9b59b6, #8e44ad);
   /* TODO #6: Set rotation to 300 degrees */
-  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ deg);
+  transform: translate(0, -50%) rotate(/* YOUR DEGREES HERE */ 300deg);
 }
 
 /* STEP 4: The spinning animation */
 @keyframes spin {
   /* TODO #7: Fill in the rotation values */
   from {
-    transform: rotate(/* START ROTATION - try 0deg */);
+    transform: rotate(/* START ROTATION - try 0deg */0deg);
   }
   to {
-    transform: rotate(/* END ROTATION - try 360deg */);
+    transform: rotate(/* END ROTATION - try 360deg */-360deg);
   }
 }
+  @keyframes wobble-spin {
+    0% { transform: rotate(0deg) translateX(0px); }
+    25% { transform: rotate(90deg) translateX(5px); }
+    50% { transform: rotate(180deg) translateX(0px); }
+    75% { transform: rotate(270deg) translateX(-5px); }
+    100% { transform: rotate(360deg) translateX(0px); }
+  }
 
 /* UNDERSTANDING ROTATION:
    =======================
@@ -162,7 +169,7 @@
 /* BONUS: Individual spoke animations */
 /* TODO #11: Uncomment this to make each spoke pulse while the wheel spins! */
 /* The CSS custom property "rotation" is used to make sure that each spoke maintains its rotation position */
-/* .spoke-1 {
+.spoke-1 {
   animation: pulse 2s ease-in-out infinite;
   --rotation: 0deg;
 }
@@ -198,7 +205,7 @@
     transform: translate(0, -50%) rotate(var(--rotation)) scale(1.5);
   }
 }
-*/
+
 
 /* REAL-WORLD USES:
    ================

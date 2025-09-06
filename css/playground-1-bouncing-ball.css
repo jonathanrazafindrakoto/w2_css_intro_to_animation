@@ -25,13 +25,13 @@
   width: 80px;
   height: 80px;
   background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  border-radius: 50%; /* This makes it circular */
+  border-radius: 40%; /* This makes it circular */
 
   /* Add some visual polish */
   box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
 
   /* TODO #1: Uncomment the line below to apply the animation */
-  /* animation: bounce 2s ease-in-out infinite; */
+  animation: bounce 2s ease-in-out 3;
 }
 
 /* STEP 2: Understanding @keyframes
@@ -56,12 +56,12 @@
   /* At the middle (50%), the ball is at the top */
   50% {
     /* TODO #2: Fill in the translateY value to move the ball up 100px */
-    transform: translateY(/* YOUR CODE HERE */);
+    transform: translateX(-200px) scale(1.2) rotate(360deg);
   }
 
   /* At the end (100%), the ball returns to the bottom */
   100% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
 }
 
